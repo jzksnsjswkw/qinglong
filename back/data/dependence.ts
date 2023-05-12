@@ -43,13 +43,13 @@ export enum DependenceTypes {
 export enum InstallDependenceCommandTypes {
   'pnpm add -g',
   'pip3 install',
-  'apk add',
+  'apt install -y',
 }
 
 export enum unInstallDependenceCommandTypes {
   'pnpm remove -g',
   'pip3 uninstall -y',
-  'apk del',
+  'apt remove',
 }
 
 interface DependenceInstance

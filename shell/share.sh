@@ -483,8 +483,6 @@ handle_task_before() {
 
   echo -e "## 开始执行... $begin_time\n"
 
-  [[ $is_macos -eq 0 ]] && check_server
-
   if [[ -s $task_error_log_path ]]; then
     cat $task_error_log_path
     echo -e "加载 config.sh 出错，请手动检查"
