@@ -39,6 +39,9 @@ RUN set -x && \
   apt install --no-install-recommends -y git \
   curl \
   wget \
+  tzdata \
+  perl \
+  openssl \
   nginx \
   jq \
   procps \

@@ -57,6 +57,11 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm build:front
           pnpm build:back
+      
+      - name: publich npm package
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          npm publish
 
       - name: copy to static repo
         env:
@@ -84,7 +89,7 @@ jobs:
           git remote add gitlab "${REPO_GITLAB}"
           git push --force --quiet gitee ${GITHUB_BRANCH}:${GITHUB_BRANCH}
           git push --force --quiet gitlab ${GITHUB_BRANCH}:${GITHUB_BRANCH}
-
+      
   build:
     if: github.ref != 'refs/heads/master'
 
